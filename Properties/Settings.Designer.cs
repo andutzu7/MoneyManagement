@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DarkDemo.Properties
+namespace MoneyManagement.Properties
 {
 
 

@@ -37,3 +37,23 @@ C:\Users\Adina\Desktop\DarkDashboard-master\DarkDashboard-master\DarkDemo\DarkDe
 C:\Users\Adina\Desktop\DarkDashboard-master\DarkDashboard-master\DarkDemo\DarkDemo\bin\Debug\Google.Apis.Auth.xml
 C:\Users\Adina\Desktop\DarkDashboard-master\DarkDashboard-master\DarkDemo\DarkDemo\bin\Debug\Google.Apis.Sheets.v4.pdb
 C:\Users\Adina\Desktop\DarkDashboard-master\DarkDashboard-master\DarkDemo\DarkDemo\bin\Debug\Google.Apis.Sheets.v4.xml
+G:\interesting shit\MoneyManagement\bin\Debug\DarkDemo.exe.config
+G:\interesting shit\MoneyManagement\bin\Debug\DarkDemo.exe
+G:\interesting shit\MoneyManagement\bin\Debug\DarkDemo.pdb
+G:\interesting shit\MoneyManagement\bin\Debug\Google.Apis.pdb
+G:\interesting shit\MoneyManagement\bin\Debug\Google.Apis.xml
+G:\interesting shit\MoneyManagement\bin\Debug\Google.Apis.Auth.pdb
+G:\interesting shit\MoneyManagement\bin\Debug\Google.Apis.Auth.xml
+G:\interesting shit\MoneyManagement\bin\Debug\Google.Apis.Core.pdb
+G:\interesting shit\MoneyManagement\bin\Debug\Google.Apis.Core.xml
+G:\interesting shit\MoneyManagement\bin\Debug\Google.Apis.Sheets.v4.pdb
+G:\interesting shit\MoneyManagement\bin\Debug\Google.Apis.Sheets.v4.xml
+G:\interesting shit\MoneyManagement\bin\Debug\Newtonsoft.Json.xml
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.csprojAssemblyReference.cache
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.Properties.Resources.resources
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.csproj.GenerateResource.cache
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.csproj.CoreCompileInputs.cache
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.csproj.CopyComplete
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.exe
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.pdb
+G:\interesting shit\MoneyManagement\obj\Debug\MoneyManagement.Form1.resources
