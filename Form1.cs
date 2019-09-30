@@ -130,7 +130,7 @@ namespace MoneyManagement
 
         private void Button15_Click(object sender, EventArgs e)
         {
-            var range = $"{sheet}!A1:D4"; //modifiable
+            var range = $"{sheet}!A1:D5000"; //modifiable
             var request = service.Spreadsheets.Values.Get(SpreadSheetId, range); //modifiable
             var response = request.Execute(); //always present
             var values = response.Values; //always present too
@@ -144,7 +144,6 @@ namespace MoneyManagement
                         peleu += row[i];
                     }
                 }
-                textBox1.Text = peleu;
             }
 
         }

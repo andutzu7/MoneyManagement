@@ -50,8 +50,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button12 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button15 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -317,24 +315,6 @@
             this.label1.Text = "*Money$$ Manager is a brand new solution for keeping track of your sweet hard ear" +
     "ned money ";
             // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(967, 159);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 10;
-            this.button15.Text = "button15";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.Button15_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(795, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(477, 22);
-            this.textBox1.TabIndex = 11;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-            // 
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.Black;
@@ -348,7 +328,7 @@
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(288, 232);
             this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             this.chart1.Size = new System.Drawing.Size(1054, 439);
             this.chart1.TabIndex = 8;
             this.chart1.Text = "chart1";
@@ -363,8 +343,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1368, 718);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button15);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button12);
@@ -407,8 +385,6 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         //private FirstCustomControl firstCustomControl1;
         // private MySecondCustmControl mySecondCustmControl1;
