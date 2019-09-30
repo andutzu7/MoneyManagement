@@ -117,5 +117,85 @@ namespace MoneyManagement
         {
             this.Close();
         }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Chart2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button15_Click(object sender, EventArgs e)
+        {
+            var range = $"{sheet}!A1:D4"; //modifiable
+            var request = service.Spreadsheets.Values.Get(SpreadSheetId, range); //modifiable
+            var response = request.Execute(); //always present
+            var values = response.Values; //always present too
+            if (values != null && values.Count > 0)
+            {
+                string peleu = string.Empty;
+                foreach (var row in values)
+                {
+                    for (int i = 0; i < row.Count; i++)
+                    {
+                        peleu += row[i];
+                    }
+                }
+                textBox1.Text = peleu;
+            }
+
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            var range = $"{sheet}!A1:D500"; //modifiable. I used an enormous range to be sure that i get all the entries
+            var request = service.Spreadsheets.Values.Get(SpreadSheetId, range); //modifiable
+            var response = request.Execute(); //always present
+            var values = response.Values; //always present too
+            Dictionary<string, double> keyValuePairs = new Dictionary<string, double>(); 
+            if (values != null && values.Count > 0)
+            {
+                foreach (var row in values)
+                {
+                    /*
+                    if (!(l.Contains(row[3].ToString())))
+                    {
+                        l.Add(row[3].ToString());
+                        chart1.Series.Add(row[3].ToString());
+                        chart1.Series[row[3].ToString()].Points.AddY(row[1]);
+                    }
+                    else
+                    {
+
+                       chart1.Series[row[3].ToString()].Points
+                        //chart1.Series["cig"].Points.AddY(row[1]);
+
+                    }*/
+                    if (!(keyValuePairs.ContainsKey(row[3].ToString())))
+                        {
+                        keyValuePairs.Add(row[3].ToString(),Convert.ToDouble(row[1].ToString()));
+
+                    }
+                    else
+                    {
+                        keyValuePairs[row[3].ToString()] += Convert.ToDouble(row[1].ToString());
+                    }
+                                                         
+                }
+                foreach (var item in keyValuePairs)
+                {
+                    chart1.Series.Add(item.Key);
+                    chart1.Series[item.Key].Points.AddY(item.Value);
+                }
+            }
+        }
     }
 }
