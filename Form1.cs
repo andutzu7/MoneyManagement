@@ -1,4 +1,5 @@
-﻿using Google.Apis.Auth.OAuth2;
+﻿using DarkDemo;
+using Google.Apis.Auth.OAuth2;
 using Google.Apis.Sheets.v4;
 using System;
 using System.Collections.Generic;
@@ -68,7 +69,8 @@ namespace MoneyManagement
         {
             SidePanel.Height = button2.Height;
             SidePanel.Top = button2.Top;
-         
+            AddEntry panel = new AddEntry();
+            panel.Show();
 
         }
 
@@ -180,7 +182,7 @@ namespace MoneyManagement
                     }*/
                     if (!(keyValuePairs.ContainsKey(row[3].ToString())))
                         {
-                        keyValuePairs.Add(row[3].ToString(),Convert.ToDouble(row[1].ToString()));
+                        keyValuePairs.Add(row[3].ToString(),Convert.ToDouble(row[1]));
 
                     }
                     else
@@ -195,6 +197,55 @@ namespace MoneyManagement
                     chart1.Series[item.Key].Points.AddY(item.Value);
                 }
             }
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            SidePanel.Height = button1.Height;
+            SidePanel.Top = button1.Top;
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+
+            SidePanel.Height = button3.Height;
+            SidePanel.Top = button3.Top;
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = button4.Height;
+            SidePanel.Top = button4.Top;    
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = button7.Height;
+            SidePanel.Top = button7.Top;
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = button5.Height;
+            SidePanel.Top = button5.Top;
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = button6.Height;
+            SidePanel.Top = button6.Top;
+        }
+
+        private void Button13_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = button13.Height;
+            SidePanel.Top = button13.Top;
+        }
+
+        private void Button14_Click(object sender, EventArgs e)
+        {
+            qmessage q = new qmessage();
+            q.Show();
         }
     }
 }
