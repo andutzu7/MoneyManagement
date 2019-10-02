@@ -13,7 +13,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyManagement
-{
+{/// <summary>
+/// /!!!!!!!!!!!!!!!!!! 
+/// DE ADAUGAT DATA CHECK CA SA NU MAI PATESC CA IN CAZU CU LED ZEPELIN!!!!!!!!!!!!!!
+/// </summary>
     public partial class Form1 : Form
     {
 

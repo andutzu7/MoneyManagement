@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Reflection;
+
 
 namespace DarkDemo
 {
@@ -36,7 +38,8 @@ namespace DarkDemo
 
 
         static bool once = false;
-        
+
+        List<string> param;
 
         /// <summary>
         /// The initialize Sheet Is a function that has to be called when the form is created in order to connect to the 
@@ -53,6 +56,7 @@ namespace DarkDemo
                 HttpClientInitializer = credential,
                 ApplicationName = ApplicationName,
             });
+            param = new List<string>();
         }
         public AddEntry()
         {
@@ -66,7 +70,7 @@ namespace DarkDemo
 
         }
 
-        void CreateEntry(object rowA,object rowB,object rowC,object rowD)
+        void CreateEntry(object rowA, object rowB, object rowC, object rowD)
         {
             var range = $"{sheet}!A:D";
             var valueRange = new ValueRange();
@@ -87,7 +91,7 @@ namespace DarkDemo
 
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-           // textBox4.Text = "20 apr 2019";
+            textBox3.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void TextBox4_TextChanged(object sender, EventArgs e)
@@ -99,8 +103,20 @@ namespace DarkDemo
         {
             if (!once)
             {
-                CreateEntry(textBox1.Text, textBox2.Text, textBox3.Text, "44");
-                once = true;
+                if (textBox2.Text.All(char.IsDigit))
+                {
+                    CreateEntry(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
+                    param.Add(textBox1.Text);
+                    param.Add(textBox2.Text);
+                    param.Add(textBox3.Text);
+                    param.Add(textBox4.Text);
+                    once = true;
+                }
+            }
+            if ((!param.Contains(textBox1.Text)) || (!param.Contains(textBox2.Text)) || (!param.Contains(textBox3.Text)) ||
+                (!param.Contains(textBox4.Text)))
+            {
+                once = false;
             }
         }
     }
