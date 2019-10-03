@@ -124,5 +124,10 @@ namespace DarkDemo
         {
 
         }
+
+        private void DataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -85,7 +85,10 @@ namespace DarkDemo
      
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
-            textBox3.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            if (checkBox1.Checked)
+                textBox3.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            else
+                textBox3.Text = "";
         }
 
      
@@ -93,7 +96,8 @@ namespace DarkDemo
         {
             if (!once)
             {
-                if (textBox2.Text.All(char.IsDigit) && textBox2.Text!=string.Empty)
+                if (Double.TryParse(textBox2.Text,out double n) && textBox1.Text != string.Empty && textBox2.Text != string.Empty && textBox3.Text != string.Empty &&
+                    textBox4.Text != string.Empty )
                 {
                     CreateEntry(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
                     param.Add(textBox1.Text);
@@ -115,9 +119,22 @@ namespace DarkDemo
 
         }
 
-        private void AddEntry_Load(object sender, EventArgs e)
+        private void TextBox4_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TextBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void TextBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                Button1_Click(sender, e);
+            }
         }
     }
 }

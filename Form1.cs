@@ -15,10 +15,10 @@ using System.Windows.Forms;
 namespace MoneyManagement
 {/// <summary>
 /// /!!!!!!!!!!!!!!!!!! 
-/// DE ADAUGAT DATA CHECK CA SA NU MAI PATESC CA IN CAZU CU LED ZEPELIN!!!!!!!!!!!!!!
+/// DE ADAUGAT DATA CHECK CA SA NU MAI PATESC CA IN CAZU CU LED ZEPELIN!!!!!!!!!!!!!! DONE
 /// </summary>
 /// DE ADAUGAT POWER KEY CA SA POTI INTRODUCE DATA CU ENTER!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+///sa modific sheetul astfel incat sa se autoreactualizeze dupa ce modific niste valori
     public partial class Menu : Form
     {
 
@@ -49,6 +49,7 @@ namespace MoneyManagement
         ExploreData d = new ExploreData();
 
         EditEntry ed = new EditEntry();
+
 
         /// <summary>
         /// The initialize Sheet Is a function that has to be called when the form is created in order to connect to the 
@@ -231,11 +232,6 @@ namespace MoneyManagement
             ed.Show();
         }
 
-        private void Button7_Click(object sender, EventArgs e)
-        {
-            SidePanel.Height = button7.Height;
-            SidePanel.Top = button7.Top;
-        }
 
         private void Button5_Click(object sender, EventArgs e)
         {

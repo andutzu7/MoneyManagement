@@ -79,6 +79,9 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(318, 22);
             this.textBox4.TabIndex = 4;
+            this.textBox4.TextChanged += new System.EventHandler(this.TextBox4_TextChanged);
+            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox4_KeyDown);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox4_KeyPress);
             // 
             // label2
             // 
@@ -162,7 +165,6 @@
             this.Name = "AddEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddEntry";
-            this.Load += new System.EventHandler(this.AddEntry_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
