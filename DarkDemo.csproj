@@ -82,6 +82,12 @@
     <Compile Include="AddEntry.Designer.cs">
       <DependentUpon>AddEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExploreData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExploreData.Designer.cs">
+      <DependentUpon>ExploreData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="AddEntry.resx">
       <DependentUpon>AddEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExploreData.resx">
+      <DependentUpon>ExploreData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -116,6 +125,13 @@
       <DependentUpon>qmessage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\AddEntry.datasource" />
+    <None Include="Properties\DataSources\DarkDemo.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\ExploreData.datasource" />
+    <None Include="Properties\DataSources\MoneyManagement.Form1.datasource" />
+    <None Include="Properties\DataSources\MoneyManagement.Program.datasource" />
+    <None Include="Properties\DataSources\MoneyManagement.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\qmessage.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,6 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Mm\Icons\Resources\button13.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

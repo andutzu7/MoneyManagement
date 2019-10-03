@@ -17,7 +17,7 @@ namespace MoneyManagement
 /// /!!!!!!!!!!!!!!!!!! 
 /// DE ADAUGAT DATA CHECK CA SA NU MAI PATESC CA IN CAZU CU LED ZEPELIN!!!!!!!!!!!!!!
 /// </summary>
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
 
         //change the root path with ur own one
@@ -35,6 +35,16 @@ namespace MoneyManagement
         static SheetsService service;
 
         static GoogleCredential credential;
+        /// <summary>
+        /// panel area. i summon them as the app starts to b sure that i dont have 1000 windows open()
+        /// </summary>
+
+
+        AddEntry panel = new AddEntry();
+
+        qmessage q = new qmessage();
+
+        ExploreData d = new ExploreData();
 
         /// <summary>
         /// The initialize Sheet Is a function that has to be called when the form is created in order to connect to the 
@@ -52,7 +62,8 @@ namespace MoneyManagement
                 ApplicationName = ApplicationName,
             });
         }
-        public Form1()
+
+        public Menu()
         {
             InitializeComponent();
 
@@ -61,20 +72,33 @@ namespace MoneyManagement
             SidePanel.Top = button1.Top;
          
         }
+        public void HideForms()
+        {
+            List<Form> openForms = new List<Form>();
 
+            foreach (Form f in Application.OpenForms)
+                openForms.Add(f);
+
+            foreach (Form f in openForms)
+            {
+                if (f.Name != "Menu")
+                    f.Hide();
+            }
+        }
+       
         private void Button1_Click(object sender, EventArgs e)
         {
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
-           
+            HideForms();
         }
         private void button2_Click(object sender, EventArgs e)
         {
             SidePanel.Height = button2.Height;
             SidePanel.Top = button2.Top;
-            AddEntry panel = new AddEntry();
+            HideForms();
             panel.Show();
-
+            
         }
 
 
@@ -115,22 +139,10 @@ namespace MoneyManagement
          */
         #endregion
 
-        
-       
-
+  
         private void Button12_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void Chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Chart2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Button15_Click(object sender, EventArgs e)
@@ -153,11 +165,6 @@ namespace MoneyManagement
 
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             var range = $"{sheet}!A1:D500"; //modifiable. I used an enormous range to be sure that i get all the entries
@@ -169,20 +176,6 @@ namespace MoneyManagement
             {
                 foreach (var row in values)
                 {
-                    /*
-                    if (!(l.Contains(row[3].ToString())))
-                    {
-                        l.Add(row[3].ToString());
-                        chart1.Series.Add(row[3].ToString());
-                        chart1.Series[row[3].ToString()].Points.AddY(row[1]);
-                    }
-                    else
-                    {
-
-                       chart1.Series[row[3].ToString()].Points
-                        //chart1.Series["cig"].Points.AddY(row[1]);
-
-                    }*/
                     if (!(keyValuePairs.ContainsKey(row[3].ToString())))
                         {
                         keyValuePairs.Add(row[3].ToString(),Convert.ToDouble(row[1]));
@@ -206,6 +199,8 @@ namespace MoneyManagement
         {
             SidePanel.Height = button1.Height;
             SidePanel.Top = button1.Top;
+     
+
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -213,6 +208,12 @@ namespace MoneyManagement
 
             SidePanel.Height = button3.Height;
             SidePanel.Top = button3.Top;
+            HideForms(); 
+            ///this bullshit is made in order to keep the explore data stuff updated;
+            d.Close();
+            d = new ExploreData();
+            d.Show();
+            
         }
 
         private void Button4_Click(object sender, EventArgs e)
@@ -247,7 +248,6 @@ namespace MoneyManagement
 
         private void Button14_Click(object sender, EventArgs e)
         {
-            qmessage q = new qmessage();
             q.Show();
         }
     }

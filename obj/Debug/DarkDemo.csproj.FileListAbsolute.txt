@@ -56,6 +56,7 @@ G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.csproj.CoreCompileInputs.
 G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.csproj.CopyComplete
 G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.exe
 G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.pdb
-G:\interesting shit\MoneyManagement\obj\Debug\MoneyManagement.Form1.resources
 G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.qmessage.resources
 G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.AddEntry.resources
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.ExploreData.resources
+G:\interesting shit\MoneyManagement\obj\Debug\MoneyManagement.Menu.resources

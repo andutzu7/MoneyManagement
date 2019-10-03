@@ -65,10 +65,7 @@ namespace DarkDemo
             InitializeSheet();
         }
 
-        private void AddEntry_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         void CreateEntry(object rowA, object rowB, object rowC, object rowD)
         {
@@ -84,21 +81,13 @@ namespace DarkDemo
 
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             textBox3.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void TextBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void Button1_Click(object sender, EventArgs e)
         {
             if (!once)
