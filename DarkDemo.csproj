@@ -82,6 +82,12 @@
     <Compile Include="AddEntry.Designer.cs">
       <DependentUpon>AddEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEntry.Designer.cs">
+      <DependentUpon>EditEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExploreData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="AddEntry.resx">
       <DependentUpon>AddEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEntry.resx">
+      <DependentUpon>EditEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExploreData.resx">
       <DependentUpon>ExploreData.cs</DependentUpon>

@@ -60,3 +60,4 @@ G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.qmessage.resources
 G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.AddEntry.resources
 G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.ExploreData.resources
 G:\interesting shit\MoneyManagement\obj\Debug\MoneyManagement.Menu.resources
+G:\interesting shit\MoneyManagement\obj\Debug\DarkDemo.EditEntry.resources

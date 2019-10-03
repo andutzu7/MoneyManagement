@@ -17,6 +17,8 @@ namespace MoneyManagement
 /// /!!!!!!!!!!!!!!!!!! 
 /// DE ADAUGAT DATA CHECK CA SA NU MAI PATESC CA IN CAZU CU LED ZEPELIN!!!!!!!!!!!!!!
 /// </summary>
+/// DE ADAUGAT POWER KEY CA SA POTI INTRODUCE DATA CU ENTER!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     public partial class Menu : Form
     {
 
@@ -45,6 +47,8 @@ namespace MoneyManagement
         qmessage q = new qmessage();
 
         ExploreData d = new ExploreData();
+
+        EditEntry ed = new EditEntry();
 
         /// <summary>
         /// The initialize Sheet Is a function that has to be called when the form is created in order to connect to the 
@@ -219,7 +223,12 @@ namespace MoneyManagement
         private void Button4_Click(object sender, EventArgs e)
         {
             SidePanel.Height = button4.Height;
-            SidePanel.Top = button4.Top;    
+            SidePanel.Top = button4.Top;
+            HideForms();
+            ///this bullshit is made in order to keep the explore data stuff updated too;
+            ed.Close();
+            ed = new EditEntry();
+            ed.Show();
         }
 
         private void Button7_Click(object sender, EventArgs e)

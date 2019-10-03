@@ -13,10 +13,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 
-
 namespace DarkDemo
 {
-
+    /// <summary>
+    /// DE ADAUGAT ERROR MESSAGES PT WRONG DATA
+    /// </summary>
     public partial class AddEntry : Form
     {
 
@@ -92,7 +93,7 @@ namespace DarkDemo
         {
             if (!once)
             {
-                if (textBox2.Text.All(char.IsDigit))
+                if (textBox2.Text.All(char.IsDigit) && textBox2.Text!=string.Empty)
                 {
                     CreateEntry(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text);
                     param.Add(textBox1.Text);
@@ -107,6 +108,16 @@ namespace DarkDemo
             {
                 once = false;
             }
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddEntry_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

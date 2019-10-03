@@ -77,6 +77,7 @@ namespace DarkDemo
             {
                 foreach (var row in values)
                 {
+
                     int n = dataGridView1.Rows.Add();
                     for (int i = 0; i < 4; i++)
                     {
@@ -121,7 +122,6 @@ namespace DarkDemo
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-     
 
         }
     }
