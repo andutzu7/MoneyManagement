@@ -88,7 +88,7 @@ namespace DarkDemo
                
             }
             //second range of values
-            var secondRange = $"{sheet}!F3:G10";
+            var secondRange = $"{sheet}!G1:H8";
             var secondRequest = service.Spreadsheets.Values.Get(SpreadSheetId, secondRange); //modifiable
             var secondResponse = secondRequest.Execute(); //always present
             var values2 = secondResponse.Values; //always present too

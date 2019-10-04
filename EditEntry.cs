@@ -133,7 +133,7 @@ namespace DarkDemo
         {
             if (checkBox1.Checked)
             {
-                textBox3.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                textBox3.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
             }
             else
@@ -159,40 +159,54 @@ namespace DarkDemo
             {
                 if (index.Contains(i)) //daca pe pozitia i a fost gasit un match
                 {
-                    if ((dataGridView1.Rows[itemIndex].Cells[0].Value == null && dataGridView1.Rows[itemIndex].Cells[1].Value == null && dataGridView1.Rows[itemIndex].Cells[2].Value == null &&
-                    dataGridView1.Rows[itemIndex].Cells[3].Value == null))
+                    if (dataGridView1.Rows[itemIndex].Cells[4].Value != null)
                     {
-                        badValue = true;
-                    }
-                    else
-                     if ((dataGridView1.Rows[itemIndex].Cells[0].Value == null) || ((dataGridView1.Rows[itemIndex].Cells[3].Value == null)
-                        || ((dataGridView1.Rows[itemIndex].Cells[0].Value == null))))
-                    {
-                        badValue = true;
-                        
-                    }
-                    else
-                    {
-                        if (Double.TryParse(dataGridView1.Rows[itemIndex].Cells[1].Value.ToString(), out double n))
-                        {
-                            var l = new List<object>() { dataGridView1.Rows[itemIndex].Cells[0].Value.ToString(), dataGridView1.Rows[itemIndex].Cells[1].Value.ToString() ,
-                    dataGridView1.Rows[itemIndex].Cells[2].Value.ToString(),dataGridView1.Rows[itemIndex].Cells[3].Value.ToString()};
-
-                            valueRange.Values = new List<IList<object>> { l };
-                            SpreadsheetsResource.ValuesResource.UpdateRequest update = service.Spreadsheets.Values.Update(valueRange, SpreadSheetId, $"{sheet}!A{i + 1}:D{i + 1}");
-                            update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
-                            update.Execute();
-
+                        if ((bool)dataGridView1.Rows[itemIndex].Cells[4].Value == true)
+                        { ///deletion code
+                            var dRange = $"{sheet}!A{i + 1}:D{i + 1}";
+                            var reqBody = new ClearValuesRequest();
+                            var delRequest = service.Spreadsheets.Values.Clear(reqBody, SpreadSheetId, dRange);
+                            delRequest.Execute();
                             itemIndex++;
-                            badValue = false;
                         }
-                        else
+                    }
+                    else
+                    {
+                        if ((dataGridView1.Rows[itemIndex].Cells[0].Value == null && dataGridView1.Rows[itemIndex].Cells[1].Value == null && dataGridView1.Rows[itemIndex].Cells[2].Value == null &&
+                        dataGridView1.Rows[itemIndex].Cells[3].Value == null))
                         {
                             badValue = true;
                         }
+                        else
+                         if ((dataGridView1.Rows[itemIndex].Cells[0].Value == null) || ((dataGridView1.Rows[itemIndex].Cells[3].Value == null)
+                            || ((dataGridView1.Rows[itemIndex].Cells[0].Value == null))))
+                        {
+                            badValue = true;
 
-                    }  
-                }
+                        }
+                        else
+                        {
+                            if (Double.TryParse(dataGridView1.Rows[itemIndex].Cells[1].Value.ToString(), out double n))
+                            {
+                                var l = new List<object>() { dataGridView1.Rows[itemIndex].Cells[0].Value.ToString(), dataGridView1.Rows[itemIndex].Cells[1].Value.ToString() ,
+                    dataGridView1.Rows[itemIndex].Cells[2].Value.ToString(),dataGridView1.Rows[itemIndex].Cells[3].Value.ToString()};
+
+                                valueRange.Values = new List<IList<object>> { l };
+                                SpreadsheetsResource.ValuesResource.UpdateRequest update = service.Spreadsheets.Values.Update(valueRange, SpreadSheetId, $"{sheet}!A{i + 1}:D{i + 1}");
+                                update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
+                                update.Execute();
+
+                                itemIndex++;
+                                badValue = false;
+                            }
+                            else
+                            {
+                                badValue = true;
+                            }
+
+                        }
+                    }
+            }
                 if (badValue)
                 {
                     label7.Visible = true;
@@ -249,6 +263,11 @@ namespace DarkDemo
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TextBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

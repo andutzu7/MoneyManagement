@@ -86,7 +86,7 @@ namespace DarkDemo
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
-                textBox3.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                textBox3.Text = DateTime.Now.ToString("MM/dd/yyyy");
             else
                 textBox3.Text = "";
         }
@@ -135,6 +135,11 @@ namespace DarkDemo
             {
                 Button1_Click(sender, e);
             }
+        }
+
+        private void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
