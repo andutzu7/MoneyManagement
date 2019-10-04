@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -157,11 +158,22 @@
             this.label8.Text = "*Data este in format USA (\"MM/dd/yyyy\")";
             this.label8.Visible = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(880, 477);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(267, 17);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Dublu click/Dublu enter pt a trimite datele";
+            // 
             // AddEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1155, 503);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.button1);
@@ -198,5 +210,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -50,7 +50,7 @@ namespace MoneyManagement
 
         EditEntry ed = new EditEntry();
 
-
+        MoneyGoal mg = new MoneyGoal();
         /// <summary>
         /// The initialize Sheet Is a function that has to be called when the form is created in order to connect to the 
         /// google sheet. Also, all the things declared above are google api stuff, dont rly fully comprehend it yet.
@@ -233,22 +233,16 @@ namespace MoneyManagement
         }
 
 
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            SidePanel.Height = button5.Height;
-            SidePanel.Top = button5.Top;
-        }
-
-        private void Button6_Click(object sender, EventArgs e)
-        {
-            SidePanel.Height = button6.Height;
-            SidePanel.Top = button6.Top;
-        }
-
+        
         private void Button13_Click(object sender, EventArgs e)
         {
             SidePanel.Height = button13.Height;
             SidePanel.Top = button13.Top;
+            ///this bullshit is made in order to keep the explore data stuff updated;
+            mg.Close();
+            mg = new MoneyGoal();
+            mg.Show();
+
         }
 
         private void Button14_Click(object sender, EventArgs e)
